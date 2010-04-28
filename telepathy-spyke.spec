@@ -1,5 +1,5 @@
 %define		bzrrev	21
-%define		rel		0.2
+%define		rel		0.3
 Summary:	Spyke = Telepathy+Python+Skype
 Name:		telepathy-spyke
 Version:	0.1
@@ -36,7 +36,7 @@ rm data/icons/hicolor/48x48/apps/skype.png
 sed -i -e 's,\.local/,,' setup.py
 
 # dislike .py ext in $PATH
-sed -i -e 's,Exec=/usr/bin/env telepathy_spyke.py,/usr/bin/env %{_bindir}/telepathy_spyke,' data/org.freedesktop.Telepathy.ConnectionManager.spyke.service
+sed -i -e 's,Exec=/usr/bin/env telepathy_spyke.py,Exec=/usr/bin/env %{_bindir}/telepathy_spyke,' data/org.freedesktop.Telepathy.ConnectionManager.spyke.service
 
 %build
 %{__python} setup.py build
