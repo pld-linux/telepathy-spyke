@@ -1,5 +1,5 @@
 %define		bzrrev	21
-%define		rel		0.1
+%define		rel		0.2
 Summary:	Spyke = Telepathy+Python+Skype
 Name:		telepathy-spyke
 Version:	0.1
@@ -15,6 +15,9 @@ URL:		https://launchpad.net/spyke
 BuildRequires:	python
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	python-shiny >= 0.1-1.4
+# for pdb
+Requires:	python-devel-tools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,6 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mission-control/profiles/skype.profile
 %{_datadir}/telepathy/managers/spyke.manager
 %attr(755,root,root) %{_bindir}/telepathy_spyke
+%dir %{py_sitescriptdir}/spyke
 %{py_sitescriptdir}/spyke/*.py[co]
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/spyke-*.egg-info
