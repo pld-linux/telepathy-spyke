@@ -13,6 +13,7 @@ Source0:	spyke-%{bzrrev}.tar.bz2
 # Source0-md5:	b216c16224fed4c048e14d52c5e77124
 URL:		https://launchpad.net/spyke
 BuildRequires:	python
+BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-shiny >= 0.1-1.4
